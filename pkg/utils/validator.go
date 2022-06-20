@@ -5,7 +5,7 @@ import (
 
 	"github.com/go-playground/validator"
 	"github.com/labstack/echo/v4"
-	"onqlave.io/onqlave.core/pkg/common"
+	"github.com/onqlavelabs/onqlave.core/pkg/common"
 )
 
 type (

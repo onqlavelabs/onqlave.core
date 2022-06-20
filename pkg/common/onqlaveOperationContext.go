@@ -2,7 +2,7 @@ package common
 
 import (
 	"github.com/labstack/echo/v4"
-	"onqlave.io/onqlave.core/pkg/utils/auth/key"
+	"github.com/onqlavelabs/onqlave.core/pkg/utils/auth/key"
 )
 
 type onqlaveOperationContext struct {

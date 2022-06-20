@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	dapr "github.com/dapr/go-sdk/client"
-	"onqlave.io/onqlave.core/pkg/domainevents"
+	"github.com/onqlavelabs/onqlave.core/pkg/domainevents"
 )
 
 const (

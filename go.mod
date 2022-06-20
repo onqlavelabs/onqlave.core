@@ -1,4 +1,4 @@
-module onqlave.io/onqlave.core
+module github.com/onqlavelabs/onqlave.core
 
 go 1.18
 

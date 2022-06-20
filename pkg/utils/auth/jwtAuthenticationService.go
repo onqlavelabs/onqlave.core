@@ -7,7 +7,7 @@ import (
 
 	"firebase.google.com/go/v4/auth"
 	"github.com/labstack/echo/v4"
-	key "onqlave.io/onqlave.core/pkg/utils/auth/key"
+	key "github.com/onqlavelabs/onqlave.core/pkg/utils/auth/key"
 )
 
 type JwtAuthenticationService interface {

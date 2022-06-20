@@ -8,9 +8,9 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"onqlave.io/onqlave.core/pkg/common"
-	"onqlave.io/onqlave.core/pkg/data"
-	"onqlave.io/onqlave.core/pkg/utils/auth"
+	"github.com/onqlavelabs/onqlave.core/pkg/common"
+	"github.com/onqlavelabs/onqlave.core/pkg/data"
+	"github.com/onqlavelabs/onqlave.core/pkg/utils/auth"
 )
 
 func WithServerHeader() echo.MiddlewareFunc {
