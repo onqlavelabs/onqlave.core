@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+onqlave.controlplane
+cmd/registration/registration
+cmd/communication/communication
+google-credential.json
