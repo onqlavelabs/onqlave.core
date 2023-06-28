@@ -1,6 +1,6 @@
 package user
 
-import "github.com/onqlavelabs/onqlave.cli/core/contracts/common"
+import "github.com/onqlavelabs/onqlave.core/contracts/common"
 
 type UpdateRequest struct {
 	User UpdateInformation `json:"user"`

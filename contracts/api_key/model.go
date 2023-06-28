@@ -3,24 +3,24 @@ package api_key
 import (
 	"time"
 
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/acl"
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/application"
-	arx "github.com/onqlavelabs/onqlave.cli/core/contracts/arx"
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/common"
+	"github.com/onqlavelabs/onqlave.core/contracts/acl"
+	"github.com/onqlavelabs/onqlave.core/contracts/application"
+	arx "github.com/onqlavelabs/onqlave.core/contracts/arx"
+	"github.com/onqlavelabs/onqlave.core/contracts/common"
 )
 
 type APIKey struct {
-	ID            string                   `json:"id"`
-	AccessKey     string                   `json:"access_key"`
-	CreatedAt     string                   `json:"created_at"`
-	Status        string                   `json:"status"`
-	CreatedBy     *common.ShortUserInfo    `json:"created_by"`
-	ApplicationID string                   `json:"application_id,omitempty"`
-	Application   common.ShortResourceInfo `json:"application"`
-	ArxID         string                   `json:"cluster_id,omitempty"`
-	Arx           common.ShortResourceInfo `json:"cluster"`
-	ACL           acl.ACL                  `json:"acl"`
-	ArxUrl        string                   `json:"arx_url"`
+	ID            string                    `json:"id"`
+	AccessKey     string                    `json:"access_key"`
+	CreatedAt     string                    `json:"created_at"`
+	Status        string                    `json:"status"`
+	CreatedBy     *common.ShortUserInfo     `json:"created_by"`
+	ApplicationID string                    `json:"application_id,omitempty"`
+	Application   *common.ShortResourceInfo `json:"application"`
+	ArxID         string                    `json:"cluster_id,omitempty"`
+	Arx           *common.ShortResourceInfo `json:"cluster"`
+	ACL           acl.ACL                   `json:"acl"`
+	ArxUrl        string                    `json:"arx_url"`
 }
 
 type APIKeys struct {

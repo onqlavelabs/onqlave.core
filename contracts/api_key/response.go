@@ -1,7 +1,7 @@
 package api_key
 
 import (
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/common"
+	"github.com/onqlavelabs/onqlave.core/contracts/common"
 )
 
 type DetailResponse struct {

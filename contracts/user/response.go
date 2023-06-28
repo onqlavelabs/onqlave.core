@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/acl"
-	"github.com/onqlavelabs/onqlave.cli/core/contracts/common"
+	"github.com/onqlavelabs/onqlave.core/contracts/acl"
+	"github.com/onqlavelabs/onqlave.core/contracts/common"
 )
 
 type GetListResponse struct {
