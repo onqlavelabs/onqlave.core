@@ -157,3 +157,27 @@ type Insights struct {
 	TotalActive  int `json:"total_active"`
 	TotalSealed  int `json:"total_sealed"`
 }
+
+type GetDefaultArxWrapper struct {
+	ID                  common.ArxId             `json:"id" validate:"required"`
+	Name                string                   `json:"name" validate:"required"`
+	SpendLimit          uint64                   `json:"spend_limit"`
+	Description         string                   `json:"description" validate:"required,min=4,max=500"`
+	Purpose             *Purpose                 `json:"purpose" validate:"required,max=50"`
+	Plan                *Plan                    `json:"plan" validate:"required,max=50"`
+	Provider            *Provider                `json:"provider" validate:"required,max=50"`
+	Regions             []Region                 `json:"regions" validate:"required,max=5"`
+	AvailabilityMessage string                   `json:"availability_message"`
+	EncryptionMethod    *EncryptionMethod        `json:"encryption_method" validate:"required,max=50"`
+	RotationCycle       *EncryptionRotationCycle `json:"rotation_cycle" validate:"required,max=50"`
+	Owner               *Owner                   `json:"owner" validate:"required,max=150"`
+	IsDefault           bool                     `json:"is_default"`
+	Status              string                   `json:"status" validate:"required,max=50"`
+}
+
+type Owner struct {
+	ID     string `json:"id"`
+	Name   string `json:"name"`
+	Email  string `json:"email_address"`
+	Avatar string `json:"avatar"`
+}

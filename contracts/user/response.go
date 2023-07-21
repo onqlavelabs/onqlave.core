@@ -32,7 +32,7 @@ type GetSecurityEventResponse struct {
 	SecurityEvents []SecurityEvent `json:"data"`
 }
 
-type UpdateProfileResponse struct {
+type GetProfileResponse struct {
 	common.BaseErrorResponse
 	Data ProfileDetail `json:"data"`
 }
@@ -42,7 +42,7 @@ type UpdateNotificationSettingResponse struct {
 	UserId common.UserId `json:"data"`
 }
 
-type GetProfileResponse struct {
+type UpdateProfileResponse struct {
 	common.BaseErrorResponse
 	Profile Profile `json:"data"`
 }
