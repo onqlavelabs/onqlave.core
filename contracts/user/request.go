@@ -11,6 +11,10 @@ type AddRequest struct {
 }
 
 type UpdateProfileRequest struct {
+	Profile Profile `json:"profile" validate:"required"`
+}
+
+type UpdateProfileDetailRequest struct {
 	Profile ProfileDetail `json:"profile" validate:"required"`
 }
 
