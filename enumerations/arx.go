@@ -2,16 +2,16 @@ package enumerations
 
 type ArxStatus string
 
-var (
-	ArxActive      ArxStatus = "active"
-	ArxSealed      ArxStatus = "sealed"
-	ArxUnsealed    ArxStatus = "unsealed"
-	ArxInactive    ArxStatus = "inactive"
-	ArxPending     ArxStatus = "pending"
-	ArxFailed      ArxStatus = "failed"
-	ArxDeleted     ArxStatus = "deleted"
-	ArxInitiated   ArxStatus = "initiated"
-	ArxReInitiated ArxStatus = "reinitiated"
+const (
+	ArxStatusActive      ArxStatus = "active"
+	ArxStatusSealed      ArxStatus = "sealed"
+	ArxStatusUnsealed    ArxStatus = "unsealed"
+	ArxStatusInactive    ArxStatus = "inactive"
+	ArxStatusPending     ArxStatus = "pending"
+	ArxStatusFailed      ArxStatus = "failed"
+	ArxStatusDeleted     ArxStatus = "deleted"
+	ArxStatusInitiated   ArxStatus = "initiated"
+	ArxStatusReInitiated ArxStatus = "reinitiated"
 )
 
 func (status ArxStatus) String() string {

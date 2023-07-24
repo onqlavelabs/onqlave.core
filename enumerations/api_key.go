@@ -3,11 +3,11 @@ package enumerations
 type ApiKeyStatus string
 
 const (
-	Pending  ApiKeyStatus = "pending"
-	Active   ApiKeyStatus = "active"
-	Disabled ApiKeyStatus = "disabled"
-	Deleted  ApiKeyStatus = "deleted"
-	Failed   ApiKeyStatus = "failed"
+	ApiKeyStatusPending  ApiKeyStatus = "pending"
+	ApiKeyStatusActive   ApiKeyStatus = "active"
+	ApiKeyStatusDisabled ApiKeyStatus = "disabled"
+	ApiKeyStatusDeleted  ApiKeyStatus = "deleted"
+	ApiKeyStatusFailed   ApiKeyStatus = "failed"
 )
 
 func (status ApiKeyStatus) String() string {
