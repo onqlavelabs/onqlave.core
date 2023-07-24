@@ -23,3 +23,8 @@ type BaseInfoResponse struct {
 	common.BaseErrorResponse
 	Data BaseInfo `json:"data"`
 }
+
+type DefaultResponse struct {
+	common.BaseErrorResponse
+	Data GetDefaultArxWrapper `json:"data"`
+}

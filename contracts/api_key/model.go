@@ -1,6 +1,7 @@
 package api_key
 
 import (
+	"github.com/onqlavelabs/onqlave.core/enumerations"
 	"time"
 
 	"github.com/onqlavelabs/onqlave.core/contracts/acl"
@@ -79,4 +80,73 @@ type APIKeyVersion struct {
 	Number    string    `json:"version_number" validate:"required"`
 	CreatedAt time.Time `json:"created_at" validate:"required"`
 	ExpiresAt time.Time `json:"expires_at" validate:"required"`
+}
+
+type EventAPIKeyStatusChange struct {
+	KeyID      string                    `json:"key_id"`
+	AccessKey  string                    `json:"access_key"`
+	Status     enumerations.ApiKeyStatus `json:"status"`
+	ProvidedAt *time.Time                `json:"provided_at"`
+	Message    string                    `json:"message"`
+	ArxUrl     string                    `json:"arx_url"`
+	IsError    bool                      `json:"is_error"`
+}
+
+func (keys *APIKeys) SetACL(acl acl.ACL) {
+	keys.ACL = acl
+}
+
+func (keys *APIKeys) SetAPIKey(apiKey APIKey) {
+	keys.APIKeys = append(keys.APIKeys, apiKey)
+}
+
+func (keys *APIKeys) SetModel(apps []Application, clusters []Arx) {
+	if apps != nil {
+		keys.Model.Applications = make([]Application, len(apps))
+		copy(keys.Model.Applications, apps)
+	}
+
+	if clusters != nil {
+		keys.Model.Arx = make([]Arx, len(clusters))
+		copy(keys.Model.Arx, clusters)
+	}
+}
+
+func (keys *APIKeys) SetInsights(insights Insights) {
+	keys.Insights = insights
+}
+
+func (app *Application) SetTechnology(applicationTechnology application.Technology) {
+	app.ApplicationTechnology = applicationTechnology
+}
+
+func (c *Arx) SetPurpose(purpose arx.Purpose) {
+	c.Purpose = purpose
+}
+
+func (c *Arx) SetPlan(plan arx.Plan) {
+	c.Plan = plan
+}
+
+func (c *Arx) SetProvider(provider arx.Provider) {
+	c.Provider = provider
+}
+
+func (c *Arx) SetRegions(regions []arx.Region) {
+	if regions != nil {
+		c.Regions = make([]arx.Region, len(regions))
+		copy(c.Regions, regions)
+	}
+}
+
+func (c *Arx) SetEncryption(encryption arx.EncryptionMethod) {
+	c.Encryption = encryption
+}
+
+func (c *Arx) SetRotationCycle(rotationCycle arx.EncryptionRotationCycle) {
+	c.RotationCycle = rotationCycle
+}
+
+func (c *Arx) SetCreatedBy(owner *common.ShortUserInfo) {
+	c.CreatedBy = owner
 }
