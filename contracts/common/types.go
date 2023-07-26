@@ -1,8 +1,6 @@
 package common
 
 import (
-	"fmt"
-	"github.com/google/uuid"
 	"regexp"
 )
 
@@ -46,11 +44,6 @@ func EmptyTenantId() TenantId {
 
 func EmptyArxId() ArxId {
 	return ArxId("")
-}
-
-func NewTenantId() TenantId {
-	id := fmt.Sprintf("tenant--%s", uuid.New().String())
-	return TenantId(id)
 }
 
 func ExisingTenantId(id string) TenantId {
