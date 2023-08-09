@@ -1,13 +1,13 @@
 package api_key
 
 import (
-	"github.com/onqlavelabs/onqlave.core/enumerations"
 	"time"
 
 	"github.com/onqlavelabs/onqlave.core/contracts/acl"
 	"github.com/onqlavelabs/onqlave.core/contracts/application"
 	arx "github.com/onqlavelabs/onqlave.core/contracts/arx"
 	"github.com/onqlavelabs/onqlave.core/contracts/common"
+	"github.com/onqlavelabs/onqlave.core/enumerations"
 )
 
 type APIKey struct {
@@ -26,9 +26,9 @@ type APIKey struct {
 
 type APIKeys struct {
 	ACL      acl.ACL  `json:"acl"`
-	APIKeys  []APIKey `json:"api_keys"`
+	APIKeys  []APIKey `json:"api_keys,omitempty"`
 	Model    Models   `json:"model"`
-	Insights Insights `json:"insights"`
+	Insights Insights `json:"insights,omitempty"`
 }
 
 type SensitiveData struct {
