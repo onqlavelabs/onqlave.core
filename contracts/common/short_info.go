@@ -3,6 +3,7 @@ package common
 type ShortUserInfo struct {
 	ID           string `json:"id"`
 	FullName     string `json:"full_name"`
+	Name         string `json:"name"`
 	EmailAddress string `json:"email_address"`
 	Avatar       string `json:"avatar"`
 }
