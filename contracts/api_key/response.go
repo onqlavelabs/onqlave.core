@@ -14,6 +14,11 @@ type ListResponse struct {
 	Data APIKeys `json:"data"`
 }
 
+type BaseResponse struct {
+	common.BaseErrorResponse
+	Data BaseInfo `json:"data"`
+}
+
 type SensitiveDataResponse struct {
 	common.BaseErrorResponse
 	Data SensitiveData `json:"data"`

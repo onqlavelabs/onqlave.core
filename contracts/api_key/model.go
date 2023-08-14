@@ -26,9 +26,14 @@ type APIKey struct {
 
 type APIKeys struct {
 	ACL      acl.ACL  `json:"acl"`
-	APIKeys  []APIKey `json:"api_keys,omitempty"`
+	APIKeys  []APIKey `json:"api_keys"`
 	Model    Models   `json:"model"`
-	Insights Insights `json:"insights,omitempty"`
+	Insights Insights `json:"insights"`
+}
+
+type BaseInfo struct {
+	ACL   acl.ACL `json:"acl"`
+	Model Models  `json:"model"`
 }
 
 type SensitiveData struct {
