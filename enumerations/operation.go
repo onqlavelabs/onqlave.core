@@ -11,6 +11,7 @@ var (
 	OperationProvision              Operation = "provision"
 	OperationProvisionReinitialized Operation = "provision_reinitialized"
 	OperationSetAsDefault           Operation = "set_as_default"
+	OperationRotate                 Operation = "rotate"
 	OperationArchive                Operation = "archive"
 	OperationDisable                Operation = "disable"
 	OperationEnable                 Operation = "enable"
