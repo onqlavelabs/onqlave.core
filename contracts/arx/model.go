@@ -31,14 +31,17 @@ type UpdateArx struct {
 }
 
 type Status struct {
-	ID        common.ArxId `json:"cluster_id" validate:"required"`
-	State     string       `json:"state,omitempty"`
-	Message   string       `json:"message,omitempty"`
-	Operation string       `json:"operation,omitempty"`
-	IsError   bool         `json:"is_error,omitempty"`
-	UpdatedAt time.Time    `json:"update_time,omitempty"`
-	Cluster   *Detail      `json:"cluster,omitempty"`
-	ACL       acl.ACL      `json:"acl"`
+	ID                common.ArxId        `json:"cluster_id" validate:"required"`
+	State             string              `json:"state,omitempty"`
+	Message           string              `json:"message,omitempty"`
+	Operation         string              `json:"operation,omitempty"`
+	IsError           bool                `json:"is_error,omitempty"`
+	UpdatedAt         time.Time           `json:"update_time,omitempty"`
+	Cluster           *Detail             `json:"cluster,omitempty"`
+	ACL               acl.ACL             `json:"acl"`
+	NextRotation      string              `json:"next_rotation"`
+	LastRotation      string              `json:"last_rotation"`
+	MasterKeyVersions []*MasterKeyVersion `json:"master_key_versions"`
 }
 
 type Detail struct {
