@@ -4,24 +4,21 @@ import (
 	"time"
 
 	"github.com/onqlavelabs/onqlave.core/contracts/acl"
-	"github.com/onqlavelabs/onqlave.core/contracts/application"
 	arx "github.com/onqlavelabs/onqlave.core/contracts/arx"
 	"github.com/onqlavelabs/onqlave.core/contracts/common"
 	"github.com/onqlavelabs/onqlave.core/enumerations"
 )
 
 type APIKey struct {
-	ID            string                    `json:"id"`
-	AccessKey     string                    `json:"access_key"`
-	CreatedAt     string                    `json:"created_at"`
-	Status        string                    `json:"status"`
-	CreatedBy     *common.ShortUserInfo     `json:"created_by"`
-	ApplicationID string                    `json:"application_id,omitempty"`
-	Application   *common.ShortResourceInfo `json:"application"`
-	ArxID         string                    `json:"cluster_id,omitempty"`
-	Arx           *common.ShortResourceInfo `json:"cluster"`
-	ACL           acl.ACL                   `json:"acl"`
-	ArxUrl        string                    `json:"arx_url"`
+	ID        string                    `json:"id"`
+	AccessKey string                    `json:"access_key"`
+	CreatedAt string                    `json:"created_at"`
+	Status    string                    `json:"status"`
+	CreatedBy *common.ShortUserInfo     `json:"created_by"`
+	ArxID     string                    `json:"cluster_id,omitempty"`
+	Arx       *common.ShortResourceInfo `json:"cluster"`
+	ACL       acl.ACL                   `json:"acl"`
+	ArxUrl    string                    `json:"arx_url"`
 }
 
 type APIKeys struct {
@@ -48,14 +45,7 @@ type SensitiveData struct {
 }
 
 type Models struct {
-	Applications []Application `json:"applications"`
-	Arx          []Arx         `json:"clusters"`
-}
-
-type Application struct {
-	common.ShortResourceInfo `json:",inline"`
-	Label                    string                 `json:"label"`
-	ApplicationTechnology    application.Technology `json:"application_technology"`
+	Arx []Arx `json:"clusters"`
 }
 
 type Arx struct {
@@ -76,9 +66,7 @@ type Insights struct {
 }
 
 type CreateAPIKey struct {
-	ApplicationID         string `json:"application_id" validate:"required"`
-	ClusterID             string `json:"cluster_id" validate:"required"`
-	ApplicationTechnology string `json:"application_technology" validate:"required"`
+	ClusterID string `json:"cluster_id" validate:"required"`
 }
 
 type APIKeyVersion struct {
@@ -105,12 +93,7 @@ func (keys *APIKeys) SetAPIKey(apiKey APIKey) {
 	keys.APIKeys = append(keys.APIKeys, apiKey)
 }
 
-func (keys *APIKeys) SetModel(apps []Application, clusters []Arx) {
-	if apps != nil {
-		keys.Model.Applications = make([]Application, len(apps))
-		copy(keys.Model.Applications, apps)
-	}
-
+func (keys *APIKeys) SetModel(clusters []Arx) {
 	if clusters != nil {
 		keys.Model.Arx = make([]Arx, len(clusters))
 		copy(keys.Model.Arx, clusters)
@@ -119,10 +102,6 @@ func (keys *APIKeys) SetModel(apps []Application, clusters []Arx) {
 
 func (keys *APIKeys) SetInsights(insights Insights) {
 	keys.Insights = insights
-}
-
-func (app *Application) SetTechnology(applicationTechnology application.Technology) {
-	app.ApplicationTechnology = applicationTechnology
 }
 
 func (c *Arx) SetPurpose(purpose arx.Purpose) {
