@@ -1,7 +1,7 @@
 package enumerations
 
 const (
-	CommunityPlan    = "community"
-	StarterPlan      = "starter"
-	ProfessionalPlan = "professional"
+	PlanCommunity    = "community"
+	PlanStarter      = "starter"
+	PlanProfessional = "professional"
 )
